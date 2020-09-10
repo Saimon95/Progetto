@@ -1,4 +1,4 @@
-package jpaProject;
+package com.monster.persistence.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
