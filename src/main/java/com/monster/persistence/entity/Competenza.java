@@ -1,0 +1,78 @@
+package jpaProject;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
+
+/**
+ * The persistent class for the competenza database table.
+ * 
+ */
+@Entity
+@Table(name="competenza")
+@NamedQuery(name="Competenza.findAll", query="SELECT c FROM Competenza c")
+public class Competenza implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	private int id;
+
+	private String descrizione;
+
+	private String nome;
+
+	//bi-directional many-to-one association to UtenteCompetenza
+	@OneToMany(mappedBy="competenza")
+	private List<UtenteCompetenza> utenteCompetenzas;
+
+	public Competenza() {
+	}
+
+	public int getId() {
+		return this.id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDescrizione() {
+		return this.descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<UtenteCompetenza> getUtenteCompetenzas() {
+		return this.utenteCompetenzas;
+	}
+
+	public void setUtenteCompetenzas(List<UtenteCompetenza> utenteCompetenzas) {
+		this.utenteCompetenzas = utenteCompetenzas;
+	}
+
+	public UtenteCompetenza addUtenteCompetenza(UtenteCompetenza utenteCompetenza) {
+		getUtenteCompetenzas().add(utenteCompetenza);
+		utenteCompetenza.setCompetenza(this);
+
+		return utenteCompetenza;
+	}
+
+	public UtenteCompetenza removeUtenteCompetenza(UtenteCompetenza utenteCompetenza) {
+		getUtenteCompetenzas().remove(utenteCompetenza);
+		utenteCompetenza.setCompetenza(null);
+
+		return utenteCompetenza;
+	}
+
+}
