@@ -4,17 +4,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="monsterPersistence">
-		<class>jpaProject.Annuncio</class>
-		<class>jpaProject.Azienda</class>
-		<class>jpaProject.Candidatura</class>
-		<class>jpaProject.Competenza</class>
-		<class>jpaProject.Esperienza</class>
-		<class>jpaProject.PercorsoFormativo</class>
-		<class>jpaProject.Sede</class>
-		<class>jpaProject.Settore</class>
-		<class>jpaProject.Utente</class>
-		<class>jpaProject.UtenteCompetenza</class>
-		<class>jpaProject.UtenteEsperienza</class>
-		<class>jpaProject.UtentePercorso</class>
+		<class>com.monster.persistence.Annuncio</class>
+		<class>com.monster.persistence.Azienda</class>
+		<class>com.monster.persistence.Candidatura</class>
+		<class>com.monster.persistence.Competenza</class>
+		<class>com.monster.persistence.Esperienza</class>
+		<class>com.monster.persistence.PercorsoFormativo</class>
+		<class>com.monster.persistence.Sede</class>
+		<class>com.monster.persistence.Settore</class>
+		<class>com.monster.persistence.Utente</class>
+		<class>com.monster.persistence.UtenteCompetenza</class>
+		<class>com.monster.persistence.UtenteEsperienza</class>
+		<class>com.monster.persistence.UtentePercorso</class>
 	</persistence-unit>
 </persistence>
