@@ -17,7 +17,7 @@ public class Annuncio {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private Long id;
 
 	private String contratto;
 
@@ -44,11 +44,11 @@ public class Annuncio {
 	public Annuncio() {
 	}
 
-	public int getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -16,7 +16,7 @@ public class Esperienza implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private Long id;
 
 	private String descrizione;
 
@@ -30,11 +30,11 @@ public class Esperienza implements Serializable {
 	public Esperienza() {
 	}
 
-	public int getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

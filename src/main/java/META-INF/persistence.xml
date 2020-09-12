@@ -4,17 +4,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="monsterPersistence">
-		<class>com.monster.persistence.Annuncio</class>
-		<class>com.monster.persistence.Azienda</class>
-		<class>com.monster.persistence.Candidatura</class>
-		<class>com.monster.persistence.Competenza</class>
-		<class>com.monster.persistence.Esperienza</class>
-		<class>com.monster.persistence.PercorsoFormativo</class>
-		<class>com.monster.persistence.Sede</class>
-		<class>com.monster.persistence.Settore</class>
-		<class>com.monster.persistence.Utente</class>
-		<class>com.monster.persistence.UtenteCompetenza</class>
-		<class>com.monster.persistence.UtenteEsperienza</class>
-		<class>com.monster.persistence.UtentePercorso</class>
+		<class>com.monster.persistence.entity.Annuncio</class>
+		<class>com.monster.persistence.entity.Azienda</class>
+		<class>com.monster.persistence.entity.Candidatura</class>
+		<class>com.monster.persistence.entity.Competenza</class>
+		<class>com.monster.persistence.entity.Esperienza</class>
+		<class>com.monster.persistence.entity.PercorsoFormativo</class>
+		<class>com.monster.persistence.entity.Sede</class>
+		<class>com.monster.persistence.entity.Settore</class>
+		<class>com.monster.persistence.entity.Utente</class>
+		<class>com.monster.persistence.entity.UtenteCompetenza</class>
+		<class>com.monster.persistence.entity.UtenteEsperienza</class>
+		<class>com.monster.persistence.entity.UtentePercorso</class>
 	</persistence-unit>
 </persistence>

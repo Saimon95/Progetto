@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.monster.persistence.entity.Azienda;
 import com.monster.persistence.entity.Sede;
 
-public interface SedeRepository extends JpaRepository<Sede, Integer>{
+public interface SedeRepository extends JpaRepository<Sede, Long>{
 	
 	
 	

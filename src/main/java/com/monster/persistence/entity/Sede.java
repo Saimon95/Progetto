@@ -16,7 +16,7 @@ public class Sede implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	private Long id;
 
 	private String citta;
 
@@ -34,11 +34,11 @@ public class Sede implements Serializable {
 	public Sede() {
 	}
 
-	public int getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
