@@ -7,7 +7,7 @@ import com.monster.persistence.entity.Azienda;
 public interface AziendaRepository extends JpaRepository<Azienda, Integer>{
 	
 	
-	Azienda findByNome(int id);
+	Azienda findByNome(String nome);
 	Azienda findByEmail(String email);
 	
 	

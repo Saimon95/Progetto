@@ -12,20 +12,20 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Dump della struttura del database rCAtrGDI3M
-DROP DATABASE IF EXISTS `rCAtrGDI3M`;
-CREATE DATABASE IF NOT EXISTS `rCAtrGDI3M` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
-USE `rCAtrGDI3M`;
+-- Dump della struttura del database monster
+DROP DATABASE IF EXISTS `monster`;
+CREATE DATABASE IF NOT EXISTS `monster` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+USE `monster`;
 
--- Dump della struttura di tabella rCAtrGDI3M.annuncio
+-- Dump della struttura di tabella monster.annuncio
 DROP TABLE IF EXISTS `annuncio`;
 CREATE TABLE IF NOT EXISTS `annuncio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `descrizione` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `contratto` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `data_pubblicazione` date DEFAULT NULL,
-  `id_settore` int(11) NOT NULL,
-  `id_sede` int(11) NOT NULL,
+  `id_settore` bigint(11) NOT NULL,
+  `id_sede` bigint(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_sede` (`id_sede`),
   KEY `id_settore` (`id_settore`),
@@ -33,21 +33,21 @@ CREATE TABLE IF NOT EXISTS `annuncio` (
   CONSTRAINT `id_settore` FOREIGN KEY (`id_settore`) REFERENCES `settore` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.annuncio: ~0 rows (circa)
+-- Dump dei dati della tabella monster.annuncio: ~0 rows (circa)
 /*!40000 ALTER TABLE `annuncio` DISABLE KEYS */;
 /*!40000 ALTER TABLE `annuncio` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.azienda
+-- Dump della struttura di tabella monster.azienda
 DROP TABLE IF EXISTS `azienda`;
 CREATE TABLE IF NOT EXISTS `azienda` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `decrizione` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `logo` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `numero_dipendenti` int(11) DEFAULT NULL,
+  `numero_dipendenti` bigint(11) DEFAULT NULL,
   `anno_fondazione` date DEFAULT NULL,
   `settore` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -55,16 +55,16 @@ CREATE TABLE IF NOT EXISTS `azienda` (
   UNIQUE KEY `nome` (`nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.azienda: ~0 rows (circa)
+-- Dump dei dati della tabella monster.azienda: ~0 rows (circa)
 /*!40000 ALTER TABLE `azienda` DISABLE KEYS */;
 /*!40000 ALTER TABLE `azienda` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.candidatura
+-- Dump della struttura di tabella monster.candidatura
 DROP TABLE IF EXISTS `candidatura`;
 CREATE TABLE IF NOT EXISTS `candidatura` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_annuncio` int(11) NOT NULL,
-  `id_utente` int(11) NOT NULL,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `id_annuncio` bigint(11) NOT NULL,
+  `id_utente` bigint(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_utente` (`id_utente`),
   KEY `id_annuncio` (`id_annuncio`),
@@ -72,85 +72,85 @@ CREATE TABLE IF NOT EXISTS `candidatura` (
   CONSTRAINT `id_utente` FOREIGN KEY (`id_utente`) REFERENCES `utente` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.candidatura: ~0 rows (circa)
+-- Dump dei dati della tabella monster.candidatura: ~0 rows (circa)
 /*!40000 ALTER TABLE `candidatura` DISABLE KEYS */;
 /*!40000 ALTER TABLE `candidatura` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.competenza
+-- Dump della struttura di tabella monster.competenza
 DROP TABLE IF EXISTS `competenza`;
 CREATE TABLE IF NOT EXISTS `competenza` (
-  `id` int(11) NOT NULL,
+  `id` bigint(11) NOT NULL,
   `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `descrizione` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome` (`nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.competenza: ~0 rows (circa)
+-- Dump dei dati della tabella monster.competenza: ~0 rows (circa)
 /*!40000 ALTER TABLE `competenza` DISABLE KEYS */;
 /*!40000 ALTER TABLE `competenza` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.esperienza
+-- Dump della struttura di tabella monster.esperienza
 DROP TABLE IF EXISTS `esperienza`;
 CREATE TABLE IF NOT EXISTS `esperienza` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `nome_azienda` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `descrizione` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.esperienza: ~0 rows (circa)
+-- Dump dei dati della tabella monster.esperienza: ~0 rows (circa)
 /*!40000 ALTER TABLE `esperienza` DISABLE KEYS */;
 /*!40000 ALTER TABLE `esperienza` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.percorso_formativo
+-- Dump della struttura di tabella monster.percorso_formativo
 DROP TABLE IF EXISTS `percorso_formativo`;
 CREATE TABLE IF NOT EXISTS `percorso_formativo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `formazione` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `descrizione` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `formazione` (`formazione`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.percorso_formativo: ~0 rows (circa)
+-- Dump dei dati della tabella monster.percorso_formativo: ~0 rows (circa)
 /*!40000 ALTER TABLE `percorso_formativo` DISABLE KEYS */;
 /*!40000 ALTER TABLE `percorso_formativo` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.sede
+-- Dump della struttura di tabella monster.sede
 DROP TABLE IF EXISTS `sede`;
 CREATE TABLE IF NOT EXISTS `sede` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `citta` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `regione` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `id_azienda` int(11) NOT NULL,
+  `id_azienda` bigint(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_azienda` (`id_azienda`),
   CONSTRAINT `id_azienda` FOREIGN KEY (`id_azienda`) REFERENCES `azienda` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.sede: ~0 rows (circa)
+-- Dump dei dati della tabella monster.sede: ~0 rows (circa)
 /*!40000 ALTER TABLE `sede` DISABLE KEYS */;
 /*!40000 ALTER TABLE `sede` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.settore
+-- Dump della struttura di tabella monster.settore
 DROP TABLE IF EXISTS `settore`;
 CREATE TABLE IF NOT EXISTS `settore` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `descrizione` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome` (`nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.settore: ~0 rows (circa)
+-- Dump dei dati della tabella monster.settore: ~0 rows (circa)
 /*!40000 ALTER TABLE `settore` DISABLE KEYS */;
 /*!40000 ALTER TABLE `settore` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.utente
+-- Dump della struttura di tabella monster.utente
 DROP TABLE IF EXISTS `utente`;
 CREATE TABLE IF NOT EXISTS `utente` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `cognome` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -163,16 +163,16 @@ CREATE TABLE IF NOT EXISTS `utente` (
   UNIQUE KEY `telefono` (`telefono`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.utente: ~0 rows (circa)
+-- Dump dei dati della tabella monster.utente: ~0 rows (circa)
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.utente_competenza
+-- Dump della struttura di tabella monster.utente_competenza
 DROP TABLE IF EXISTS `utente_competenza`;
 CREATE TABLE IF NOT EXISTS `utente_competenza` (
-  `id` int(11) NOT NULL,
-  `id_utente` int(11) NOT NULL,
-  `id_competenza` int(11) NOT NULL,
+  `id` bigint(11) NOT NULL,
+  `id_utente` bigint(11) NOT NULL,
+  `id_competenza` bigint(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_utente_competenza` (`id_utente`),
   KEY `id_competenza` (`id_competenza`),
@@ -180,16 +180,16 @@ CREATE TABLE IF NOT EXISTS `utente_competenza` (
   CONSTRAINT `id_utente_competenza` FOREIGN KEY (`id_utente`) REFERENCES `utente` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.utente_competenza: ~0 rows (circa)
+-- Dump dei dati della tabella monster.utente_competenza: ~0 rows (circa)
 /*!40000 ALTER TABLE `utente_competenza` DISABLE KEYS */;
 /*!40000 ALTER TABLE `utente_competenza` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.utente_esperienza
+-- Dump della struttura di tabella monster.utente_esperienza
 DROP TABLE IF EXISTS `utente_esperienza`;
 CREATE TABLE IF NOT EXISTS `utente_esperienza` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_utente` int(11) NOT NULL,
-  `id_esperienza` int(11) NOT NULL,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `id_utente` bigint(11) NOT NULL,
+  `id_esperienza` bigint(11) NOT NULL,
   `data_inizio` date NOT NULL,
   `data_fine` date NOT NULL,
   PRIMARY KEY (`id`),
@@ -199,16 +199,16 @@ CREATE TABLE IF NOT EXISTS `utente_esperienza` (
   CONSTRAINT `id_utente_esperienza` FOREIGN KEY (`id_utente`) REFERENCES `utente` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.utente_esperienza: ~0 rows (circa)
+-- Dump dei dati della tabella monster.utente_esperienza: ~0 rows (circa)
 /*!40000 ALTER TABLE `utente_esperienza` DISABLE KEYS */;
 /*!40000 ALTER TABLE `utente_esperienza` ENABLE KEYS */;
 
--- Dump della struttura di tabella rCAtrGDI3M.utente_percorso
+-- Dump della struttura di tabella monster.utente_percorso
 DROP TABLE IF EXISTS `utente_percorso`;
 CREATE TABLE IF NOT EXISTS `utente_percorso` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_utente` int(11) NOT NULL,
-  `id_percorso_formativo` int(11) NOT NULL,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `id_utente` bigint(11) NOT NULL,
+  `id_percorso_formativo` bigint(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_percorso_formativo` (`id_percorso_formativo`),
   KEY `id_utente_percorso` (`id_utente`),
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `utente_percorso` (
   CONSTRAINT `id_utente_percorso` FOREIGN KEY (`id_utente`) REFERENCES `utente` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dump dei dati della tabella rCAtrGDI3M.utente_percorso: ~0 rows (circa)
+-- Dump dei dati della tabella monster.utente_percorso: ~0 rows (circa)
 /*!40000 ALTER TABLE `utente_percorso` DISABLE KEYS */;
 /*!40000 ALTER TABLE `utente_percorso` ENABLE KEYS */;
 

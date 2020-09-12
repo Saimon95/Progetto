@@ -17,7 +17,7 @@ public class Azienda implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Long id;
+	private int id;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="anno_fondazione")
@@ -47,11 +47,11 @@ public class Azienda implements Serializable {
 	public Azienda() {
 	}
 
-	public Long getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

@@ -37,7 +37,9 @@ public class AziendaRepositoryTest extends AbstractRepositoryTest{
 	@Test
     public void testSelectAllFilled(){
     	logger.info("AziendaRepositoryTest.testSelectAllFilled() - START");    	
+    	
     	getFakeAzienda();
+    	
     	System.out.println(aziendaRT.count());
     	Assertions.assertTrue(aziendaRT.count() == 1);
     	logger.info("AziendaRepositoryTest.testSelectAllFilled() - END");
@@ -57,15 +59,15 @@ public class AziendaRepositoryTest extends AbstractRepositoryTest{
 	
 	
 	
-	
-	@Test
-	public void testInsert() {
-    	logger.info("AziendaRepositoryTest.testInsert() - START");    	
-    	Assertions.assertTrue(aziendaRT.count()==0);
-    	getFakeAzienda();
-		Assertions.assertTrue(aziendaRT.count()==1);
-		logger.info("AziendaRepositoryTest.testInsert() - END");
-	}
+//	
+//	@Test
+//	public void testInsert() {
+//    	logger.info("AziendaRepositoryTest.testInsert() - START");    	
+//    	Assertions.assertTrue(aziendaRT.count()==0);
+//    	getFakeAzienda();
+//		Assertions.assertTrue(aziendaRT.count()==1);
+//		logger.info("AziendaRepositoryTest.testInsert() - END");
+//	}
 //	
 //	@Test
 //	public void testSelectById() {
@@ -74,16 +76,17 @@ public class AziendaRepositoryTest extends AbstractRepositoryTest{
 //    	Assertions.assertTrue(aziendaRT.findById(currentAzienda.getId()).isPresent());	
 //		logger.info("AziendaRepositoryTest.testSelectById() - END");
 //	}
-////	
+//	
 //	@Test
 //	public void testSelectByName() {
-//    	logger.info("AziendaRepositoryTest.testSelectByCodeOk() - START");
-//    	String code = "test_code_" + random ;
-//    	getFakeCoursePageWithCode(code);
-//		Assertions.assertTrue(aziendaRT.findByCode(code)!=null);	
-//		logger.info("AziendaRepositoryTest.testSelectByCodeOk() - END");
+//    	logger.info("AziendaRepositoryTest.testSelectByName() - START");
+//    	int random = (int) (Math.random() * 10000);
+//    	String name = "nome" + random ;
+//    	getFakeAziendaWithName(name);
+//		Assertions.assertTrue(aziendaRT.findByNome(name).equals(name));	
+//		logger.info("AziendaRepositoryTest.testSelectByName() - END");
 //	}
-//	
+////	
 //	@Test
 //	public void testSelectByCodeKo() {
 //    	logger.info("AziendaRepositoryTest.testSelectByCodeKo() - START");
