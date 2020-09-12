@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.monster.persistence.entity.Annuncio;
 
-public interface AnnuncioRepository extends JpaRepository<Annuncio, Integer>{
+public interface AnnuncioRepository extends JpaRepository<Annuncio, Long>{
 	List<Annuncio> findByDataPubblicazioneGreaterThanEqual(Date dataPubblicazione);
 	List<Annuncio>findByContratto(String contratto);
 }

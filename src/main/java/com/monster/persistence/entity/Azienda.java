@@ -17,7 +17,8 @@ public class Azienda implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="anno_fondazione")
@@ -47,11 +48,11 @@ public class Azienda implements Serializable {
 	public Azienda() {
 	}
 
-	public int getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -147,6 +148,35 @@ public class Azienda implements Serializable {
 		sede.setAzienda(null);
 
 		return sede;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Azienda [id=");
+		builder.append(id);
+		builder.append(", annoFondazione=");
+		builder.append(annoFondazione);
+		builder.append(", decrizione=");
+		builder.append(decrizione);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", link=");
+		builder.append(link);
+		builder.append(", logo=");
+		builder.append(logo); 
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", numeroDipendenti=");
+		builder.append(numeroDipendenti);
+		builder.append(", password=");
+		builder.append(password);
+		builder.append(", settore=");
+		builder.append(settore);
+		builder.append(", sedes=");
+		builder.append(sedes);
+		builder.append("]");
+		return builder.toString();
 	}
 
 }

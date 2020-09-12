@@ -17,7 +17,7 @@ public class Utente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Long id;
+	private long id;
 
 	private String cognome;
 
@@ -54,11 +54,11 @@ public class Utente implements Serializable {
 	public Utente() {
 	}
 
-	public Long getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

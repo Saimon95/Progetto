@@ -16,7 +16,7 @@ public class PercorsoFormativo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Long id;
+	private long id;
 
 	private String descrizione;
 
@@ -29,11 +29,11 @@ public class PercorsoFormativo implements Serializable {
 	public PercorsoFormativo() {
 	}
 
-	public Long getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

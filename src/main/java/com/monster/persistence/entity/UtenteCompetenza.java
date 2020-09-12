@@ -15,7 +15,7 @@ public class UtenteCompetenza implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Long id;
+	private long id;
 
 	//bi-directional many-to-one association to Competenza
 	@ManyToOne
@@ -30,11 +30,11 @@ public class UtenteCompetenza implements Serializable {
 	public UtenteCompetenza() {
 	}
 
-	public Long getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

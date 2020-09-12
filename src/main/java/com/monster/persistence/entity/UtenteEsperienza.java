@@ -16,7 +16,7 @@ public class UtenteEsperienza implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Long id;
+	private long id;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="data_fine")
@@ -39,11 +39,11 @@ public class UtenteEsperienza implements Serializable {
 	public UtenteEsperienza() {
 	}
 
-	public Long getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
