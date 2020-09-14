@@ -27,8 +27,8 @@ public class AziendaRepositoryTest extends AbstractRepositoryTest {
 	@AfterEach
 	public void initializeAziendaTest() {
 		logger.info("AziendaRepositoryTest.initializeAziendaTest - START");
-    	aziendaRT.deleteAll();
-//		getFakeAzienda();
+		aziendaRT.deleteAll();
+		//getFakeAzienda();
 		logger.info("AziendaRepositoryTest.initializeAziendaTest - END");
 	}
 

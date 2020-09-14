@@ -17,6 +17,7 @@ public class Utente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
 	private String cognome;
@@ -205,5 +206,15 @@ public class Utente implements Serializable {
 
 		return utentePercorso;
 	}
+
+	@Override
+	public String toString() {
+		return "Utente [id=" + id + ", cognome=" + cognome + ", cv=" + cv + ", dataNascita=" + dataNascita + ", email="
+				+ email + ", nome=" + nome + ", password=" + password + ", telefono=" + telefono + "]";
+	}
+
+	
+	
+	
 
 }
